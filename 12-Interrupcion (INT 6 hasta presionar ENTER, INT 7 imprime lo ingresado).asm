@@ -1,0 +1,17 @@
+       ORG 1000H
+CADENA    DB ?
+
+       ORG 2000H
+       MOV BX, OFFSET CADENA
+       XOR CL,CL ;PONGO EN CERO CL
+LOOP:  INT 6
+       CMP BYTE PTR [BX],0DH ;ODH ES LA TECLA ENTER
+       JZ FIN
+       INC BX
+       INC CL
+       JMP LOOP
+ FIN:  MOV BX, OFFSET CADENA
+       MOV AL,CL
+       INT 7
+       HLT
+END

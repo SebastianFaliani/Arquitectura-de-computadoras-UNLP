@@ -1,0 +1,26 @@
+
+								página: 1 
+
+ Listado Fuente: pp.LST
+ Programa Fuente en: pr00ej02.ASM
+ Fecha: Fri Mar 25 15:02:08 2022
+
+  Dir. Codigo maquina	 Linea 	 Codigo en lenguaje ensamble
+
+			      1			ORG 1000H
+ 1000 15 AB		      2	VAR DW 0AB15H
+			      3			
+			      4			ORG 2000H
+ 2000 8B 1E 00 10	      5			MOV BX, VAR
+ 2004 BB 00 10		      6			MOV BX, OFFSET VAR
+ 2007 8B C3		      7			MOV AX, BX
+ 2009 8B 07		      8			MOV AX, [BX]
+ 200B F4		      9			HLT
+			     10	END
+
+
+ S I M B O L O S:
+
+ Nombre:	Tipo:		Valor:
+
+ VAR     	Mem. Word	1000h

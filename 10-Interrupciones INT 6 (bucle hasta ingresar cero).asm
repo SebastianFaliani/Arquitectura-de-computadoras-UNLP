@@ -1,0 +1,13 @@
+ORG 1000H
+  CADENA DB ?
+
+       ORG 2000h
+       MOV BX, OFFSET CADENA
+LOOP:  INT 6
+       CMP BYTE PTR [BX],30H
+       JZ FIN
+       INC BX
+       JMP LOOP
+FIN:   INT 0
+  
+END
